@@ -106,7 +106,7 @@ module StripeMock
       @base_strategy = TestStrategies::Base.new
     end
 
-    def mock_request(method, url, api_key: nil, api_base: nil, params: {}, headers: {})
+    def mock_request(method, url, api_key: nil, api_base: nil, params: {}, headers: {}, api_base_url=nil)
       return {} if method == :xtest
 
       api_key ||= (Stripe.api_key || DUMMY_API_KEY)
